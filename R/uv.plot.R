@@ -28,9 +28,13 @@ uv.plot <- function(df, legend = 0, save = T, savepath, smooth = T){
     colnames(df)[-1] <- legend
   }
 
-  df_graph <- df %>%
-    smoothen.uvvis() %>%
-    pivot_longer(-1)
+  if (smooth == F) {
+    df_graph <- pivot_longer(df, -1)
+  } else {
+    df_graph <- df %>%
+      smoothen.uvvis() %>%
+      pivot_longer(-1)
+  }
 
   plt <- ggplot(df_graph,
                 aes(x = nm,
