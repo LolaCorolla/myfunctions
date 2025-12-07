@@ -15,7 +15,7 @@ It takes a data frame pre-arranged in wavelenth and absorbance columns and plots
 
 \item{savepath}{A string indicating path for saving.}
 
-\item{smooth}{A logical vector indicating whether the curve should be smoothed. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.}
+\item{smooth}{A logical vector indicating whether the curve should be smoothed, default is T. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.}
 }
 \value{
 A plot.

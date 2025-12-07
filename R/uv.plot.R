@@ -9,7 +9,7 @@
 #' @param legend A vector string with the legend elements. The legend must of equal length as the number of columns.
 #' @param save Logical element for optional saving. Default is T.
 #' @param savepath A string indicating path for saving.
-#' @param smooth A logical vector indicating whether the curve should be smoothed. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.
+#' @param smooth A logical vector indicating whether the curve should be smoothed, default is T. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.
 #'
 #' @return A plot.
 #'
