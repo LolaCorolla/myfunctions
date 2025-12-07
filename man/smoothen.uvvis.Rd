@@ -19,7 +19,7 @@ x and y are strings with the respective column names.
 A data frame with the smoothen curves.
 }
 \description{
-\code{smoothen.uvvis} uses the smoothen function \code{\link{smooth.spline}} to fit a cubic smoothing spline.
+\code{smoothen.uvvis} uses the smooth function \code{\link{smooth.spline}} to fit a cubic smoothing spline.
 It then applies it to all the columns of a data frame, and provides a second data frame with the smoothen values.
 Can also provide a pivoted data frame for plotting various curves.
 }

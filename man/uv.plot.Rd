@@ -11,13 +11,21 @@ It takes a data frame pre-arranged in wavelenth and absorbance columns and plots
 
 \item{legend}{A vector string with the legend elements. The legend must of equal length as the number of columns.}
 
-\item{save}{Logical element for optinal saving. Default is T.}
+\item{save}{Logical element for optional saving. Default is T.}
 
 \item{savepath}{A string indicating path for saving.}
+
+\item{smooth}{A logical vector indicating whether the curve should be smoothed. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.}
 }
 \value{
 A plot.
 }
 \description{
 \code{uv-plot} Plotting uv-vis absorbance data.
+}
+\examples{
+library(tidyverse)
+library(myfunctions)
+
+
 }

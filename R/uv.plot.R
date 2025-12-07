@@ -7,18 +7,20 @@
 #'
 #' @param df A data frame.
 #' @param legend A vector string with the legend elements. The legend must of equal length as the number of columns.
-#' @param save Logical element for optinal saving. Default is T.
+#' @param save Logical element for optional saving. Default is T.
 #' @param savepath A string indicating path for saving.
+#' @param smooth A logical vector indicating whether the curve should be smoothed. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.
 #'
 #' @return A plot.
 #'
 #' @examples
-#'
+#'library(tidyverse)
+#'library(myfunctions)
 #'
 #'
 # uv.plot function -------
 #' @export
-uv.plot <- function(df, legend = 0, save = T, savepath){
+uv.plot <- function(df, legend = 0, save = T, savepath, smooth = T){
 
   if (length(legend) != ncol(df)-1 && legend != 0) {
     stop("Elements in legend do not match the number of plot elements. Make sure the legend matches the column names or do not add a legend argument.")
