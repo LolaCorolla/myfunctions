@@ -4,12 +4,14 @@
 \alias{uv.plot}
 \title{Title: Function for plotting uv-vis curves*}
 \usage{
-It takes a data frame pre-arranged in wavelenth and absorbance columns and plots it. It has legend and saving options.
+It takes a data frame pre-arranged in wavelength and absorbance columns and plots it. It has legend and saving options.
 }
 \arguments{
 \item{df}{A data frame.}
 
-\item{legend}{A vector string with the legend elements. The legend must of equal length as the number of columns.}
+\item{legend}{Logical vector indicating the inclusion of a legend in the plot.}
+
+\item{legend_items}{A vector string with the legend elements. The legend must of equal length as the number of columns.}
 
 \item{save}{Logical element for optional saving. Default is T.}
 
@@ -21,7 +23,7 @@ It takes a data frame pre-arranged in wavelenth and absorbance columns and plots
 A plot.
 }
 \description{
-\code{uv-plot} Plotting uv-vis absorbance data.
+For plotting uv-vis data.
 }
 \examples{
 library(tidyverse)

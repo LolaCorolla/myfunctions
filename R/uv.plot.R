@@ -1,12 +1,13 @@
 #' Title: Function for plotting uv-vis curves*
 #'
-#' \code{uv-plot} Plotting uv-vis absorbance data.
+#' For plotting uv-vis data.
 #'
 #' @usage
-#' It takes a data frame pre-arranged in wavelenth and absorbance columns and plots it. It has legend and saving options.
+#' It takes a data frame pre-arranged in wavelength and absorbance columns and plots it. It has legend and saving options.
 #'
 #' @param df A data frame.
-#' @param legend A vector string with the legend elements. The legend must of equal length as the number of columns.
+#' @param legend Logical vector indicating the inclusion of a legend in the plot.
+#' @param legend_items A vector string with the legend elements. The legend must of equal length as the number of columns.
 #' @param save Logical element for optional saving. Default is T.
 #' @param savepath A string indicating path for saving.
 #' @param smooth A logical vector indicating whether the curve should be smoothed, default is T. It uses \code{smoothen.uvvis} from this package to fit a cubic smoothing spline.
@@ -20,12 +21,12 @@
 #'
 # uv.plot function -------
 #' @export
-uv.plot <- function(df, legend = 0, save = T, savepath, smooth = T){
+uv.plot <- function(df, legend = T, legend_items = 0, save = T, savepath, smooth = T){
 
-  if (length(legend) != ncol(df)-1 && legend != 0) {
+  if (length(legend_items) != ncol(df)-1 && legend_items != 0) {
     stop("Elements in legend do not match the number of plot elements. Make sure the legend matches the column names or do not add a legend argument.")
-  } else if (length(legend) == ncol(df)-1) {
-    colnames(df)[-1] <- legend
+  } else if (length(legend_items) == ncol(df)-1) {
+    colnames(df)[-1] <- legend_items
   }
 
   if (smooth == F) {
@@ -41,7 +42,8 @@ uv.plot <- function(df, legend = 0, save = T, savepath, smooth = T){
                     y = value,
                     colour = name)) +
     geom_line(
-      linewidth = 1
+      linewidth = 1,
+      show.legend = legend
     ) +
     labs(
       y = "Absorbance",
